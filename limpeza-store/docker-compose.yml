@@ -1,0 +1,16 @@
+services:
+  db:
+      image: postgres:16
+      container_name: limpeza_pg
+      environment:
+        POSTGRES_DB: limpeza
+        POSTGRES_USER: limpeza
+        POSTGRES_PASSWORD: limpeza
+      
+      ports:
+        - "5432:5432"
+      volumes:
+        - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
